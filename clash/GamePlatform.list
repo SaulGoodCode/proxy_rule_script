@@ -1,5 +1,6 @@
 #Steam平台
 #不包含登陆
+DOMAIN,steamserver.net
 DOMAIN,api.steampowered.com
 DOMAIN,store.steampowered.com
 DOMAIN-SUFFIX,csgo.wmsj.cn
