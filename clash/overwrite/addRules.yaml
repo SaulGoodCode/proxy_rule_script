@@ -1,0 +1,4 @@
++rules:
+#  - "DOMAIN,api.steampowered.com,DIRECT"
+  - "DOMAIN-SUFFIX,steamcommunity.com,🚀 节点选择"
+  - "DOMAIN-SUFFIX,steampowered.com,🚀 节点选择"
