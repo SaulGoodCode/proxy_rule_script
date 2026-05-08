@@ -351,11 +351,19 @@ rule-providers:
     interval: 86400
     format: text
     type: http
+  Claude:
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Claude/Claude.list
+    path: ./ruleset/Claude.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
 rules:
   - "RULE-SET,LocalAreaNetwork,DIRECT"
   - "RULE-SET,UnBan,DIRECT"
   - "RULE-SET,BanAD,REJECT"
   - "RULE-SET,BanProgramAD,REJECT"
+  - "RULE-SET,Claude,💬 OpenAi"
   - "RULE-SET,Gemini,💬 OpenAi"
   - "RULE-SET,GoogleCN,DIRECT"
   - "RULE-SET,SteamCN,DIRECT"
