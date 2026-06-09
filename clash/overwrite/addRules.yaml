@@ -1,4 +1,10 @@
 +rules:
-#  - "DOMAIN,api.steampowered.com,DIRECT"
-  - "DOMAIN-SUFFIX,steamcommunity.com,🚀 节点选择"
-  - "DOMAIN-SUFFIX,steampowered.com,🚀 节点选择"
+  - "DOMAIN-SUFFIX,notebooklm.google,💬 OpenAi"
+  - "DOMAIN-SUFFIX,notebooklm.google.com,💬 OpenAi"
+  - 'DOMAIN,steamcdn-a.akamaihd.net,DIRECT'
+  - 'DOMAIN-SUFFIX,steamserver.net,DIRECT'
+  - 'DOMAIN-SUFFIX,qoder.sh,DIRECT'
+  - 'DOMAIN-SUFFIX,aliyuncs.com,DIRECT'
+  - 'DOMAIN-SUFFIX,qoder.com,DIRECT'
+  - 'DOMAIN-SUFFIX,linuxdo.org,DIRECT'
+  - 'DOMAIN-SUFFIX,argotunnel.com,DIRECT'
