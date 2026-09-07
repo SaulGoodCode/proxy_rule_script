@@ -288,20 +288,6 @@ rule-providers:
     interval: 86400
     format: text
     type: http
-  BilibiliHMT:
-    url: https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/BilibiliHMT.list
-    path: ./ruleset/BilibiliHMT.list
-    behavior: classical
-    interval: 86400
-    format: text
-    type: http
-  Bilibili:
-    url: https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/Bilibili.list
-    path: ./ruleset/Bilibili.list
-    behavior: classical
-    interval: 86400
-    format: text
-    type: http
   ChinaMedia:
     url: https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/ChinaMedia.list
     path: ./ruleset/ChinaMedia.list
@@ -382,13 +368,11 @@ rules:
   - "RULE-SET,YouTube,🚀 节点选择"
   - "RULE-SET,Netflix,🎥 奈飞视频"
   - "RULE-SET,Bahamut,🚀 节点选择"
-  - "RULE-SET,BilibiliHMT,DIRECT"
-  - "RULE-SET,Bilibili,DIRECT"
   - "RULE-SET,ChinaMedia,DIRECT"
+  - "RULE-SET,Download,DIRECT"
   - "RULE-SET,ProxyMedia,🚀 节点选择"
   - "RULE-SET,ProxyGFWlist,🚀 节点选择"
   - "RULE-SET,ChinaDomain,DIRECT"
   - "RULE-SET,ChinaCompanyIp,DIRECT"
-  - "RULE-SET,Download,DIRECT"
   - "GEOIP,CN,DIRECT"
   - "MATCH,🐟 漏网之鱼"
