@@ -36,7 +36,7 @@ function main(config) {
       ]
     },
     {
-      name: '💬 OpenAi',
+      name: '🤖 AI服务',
       type: 'select',
       proxies: [
         '🚀 节点选择',
@@ -265,14 +265,6 @@ function main(config) {
       format: 'text',
       type: 'http'
     },
-    OpenAi: {
-      url: 'https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/OpenAi.list',
-      path: './ruleset/OpenAi.list',
-      behavior: 'classical',
-      interval: 86400,
-      format: 'text',
-      type: 'http'
-    },
     NetEaseMusic: {
       url: 'https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/NetEaseMusic.list',
       path: './ruleset/NetEaseMusic.list',
@@ -401,20 +393,12 @@ function main(config) {
       format: 'text',
       type: 'http'
     },
-    Gemini: {
-      url: 'https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Gemini/Gemini.list',
-      path: './ruleset/Gemini.list',
+    AIGlobal: {
+      url: 'https://cdn.jsdelivr.net/gh/VPSDance/ai-proxy-rules@main/rules/clash/global.yaml',
+      path: './ruleset/AIGlobal.yaml',
       behavior: 'classical',
       interval: 86400,
-      format: 'text',
-      type: 'http'
-    },
-    Claude: {
-      url: 'https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Claude/Claude.list',
-      path: './ruleset/Claude.list',
-      behavior: 'classical',
-      interval: 86400,
-      format: 'text',
+      format: 'yaml',
       type: 'http'
     }
   };
@@ -425,8 +409,7 @@ function main(config) {
     'RULE-SET,UnBan,DIRECT',
     'RULE-SET,BanAD,REJECT',
     'RULE-SET,BanProgramAD,REJECT',
-    'RULE-SET,Claude,💬 OpenAi',
-    'RULE-SET,Gemini,💬 OpenAi',
+    'RULE-SET,AIGlobal,🤖 AI服务',
     'RULE-SET,GoogleCN,DIRECT',
     'RULE-SET,SteamCN,DIRECT',
     'RULE-SET,Bing,Ⓜ️ 微软服务',
@@ -434,7 +417,6 @@ function main(config) {
     'RULE-SET,Microsoft,Ⓜ️ 微软服务',
     'RULE-SET,Apple,🍎 苹果服务',
     'RULE-SET,Telegram,🚀 节点选择',
-    'RULE-SET,OpenAi,💬 OpenAi',
     'RULE-SET,NetEaseMusic,DIRECT',
     'RULE-SET,Epic,🎮 游戏平台',
     'RULE-SET,Origin,🎮 游戏平台',
