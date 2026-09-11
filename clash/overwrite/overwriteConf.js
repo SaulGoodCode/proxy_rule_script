@@ -146,7 +146,7 @@ function main(config) {
     {
       name: '🇺🇲 美国节点',
       'include-all': true,
-      filter: '(?i)美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States',
+      filter: '(?i)美国|美西|美东|美利坚|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|\\bUS\\b|USA|United States',
       type: 'url-test',
       interval: 300,
       tolerance: 200
@@ -170,7 +170,7 @@ function main(config) {
     {
       name: '🇰🇷 韩国节点',
       'include-all': true,
-      filter: '(?i)KR|Korea|KOR|首尔|韩|韓',
+      filter: '(?i)\\bKR\\b|Korea|\\bKOR\\b|首尔|韩|韓',
       type: 'url-test',
       interval: 300,
       tolerance: 200
