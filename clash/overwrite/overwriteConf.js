@@ -265,14 +265,6 @@ function main(config) {
       format: 'text',
       type: 'http'
     },
-    NetEaseMusic: {
-      url: 'https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/NetEaseMusic.list',
-      path: './ruleset/NetEaseMusic.list',
-      behavior: 'classical',
-      interval: 86400,
-      format: 'text',
-      type: 'http'
-    },
     Epic: {
       url: 'https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/Epic.list',
       path: './ruleset/Epic.list',
@@ -417,7 +409,6 @@ function main(config) {
     'RULE-SET,Microsoft,Ⓜ️ 微软服务',
     'RULE-SET,Apple,🍎 苹果服务',
     'RULE-SET,Telegram,🚀 节点选择',
-    'RULE-SET,NetEaseMusic,DIRECT',
     'RULE-SET,Epic,🎮 游戏平台',
     'RULE-SET,Origin,🎮 游戏平台',
     'RULE-SET,Sony,🎮 游戏平台',
@@ -435,6 +426,83 @@ function main(config) {
     'GEOIP,CN,DIRECT',
     'MATCH,🐟 漏网之鱼'
   ];
+
+  // 4. 设置流量嗅探 (sniffer)
+  config['sniffer'] = {
+    enable: true,
+    'force-dns-mapping': true,
+    'parse-pure-ip': true,
+    'override-destination': true,
+    sniff: {
+      HTTP: { ports: [80, '8080-8880'], 'override-destination': true },
+      TLS: { ports: [443, 8443] },
+      QUIC: { ports: [443, 8443] }
+    }
+  };
+
+  // 5. 设置虚拟网卡 (tun)
+  config['tun'] = {
+    enable: true,
+    stack: 'system',
+    'auto-route': true,
+    'auto-detect-interface': true,
+    'strict-route': true,
+    'dns-hijack': ['any:53', 'tcp://any:53']
+  };
+
+  // 6. 设置DNS
+  config['dns'] = {
+    enable: true,
+    listen: '0.0.0.0:1053',
+    ipv6: false,
+    'cache-algorithm': 'arc',
+    'prefer-h3': false,
+    'use-hosts': true,
+    'use-system-hosts': true,
+    'respect-rules': true,
+    'enhanced-mode': 'fake-ip',
+    'fake-ip-filter-mode': 'blacklist',
+    'fake-ip-filter': [
+      '+.cn',
+      'rule-set:LocalAreaNetwork',
+      'rule-set:GoogleCN',
+      'rule-set:SteamCN',
+      'rule-set:ChinaDomain',
+      'rule-set:ChinaCompanyIp',
+      'rule-set:ChinaMedia',
+      'rule-set:Download',
+      '+.lan',
+      '+.local',
+      '+.msftncsi.com',
+      'msftconnecttest.com',
+      'connect.rom.miui.com',
+      'connectivitycheck.platform.hicloud.com',
+      'time.*.com',
+      'time.*.gov',
+      'time.*.apple.com',
+      'pool.ntp.org'
+    ],
+    'default-nameserver': ['223.5.5.5', '119.29.29.29'],
+    nameserver: ['https://1.1.1.1/dns-query#🚀 节点选择'],
+    'proxy-server-nameserver': [
+      'https://doh.pub/dns-query#DIRECT',
+      'https://dns.alidns.com/dns-query#DIRECT'
+    ],
+    'direct-nameserver': [
+      'system',
+      'https://dns.alidns.com/dns-query',
+      'https://doh.pub/dns-query'
+    ]
+  };
+
+  // 7. 设置Hosts
+  config['hosts'] = {
+    'dns.alidns.com': ['223.5.5.5', '223.6.6.6'],
+    'doh.pub': ['1.12.12.12', '120.53.53.53'],
+    'services.googleapis.cn': ['services.googleapis.com'],
+    '+.mcdn.bilivideo.com': ['0.0.0.0'],
+    '+.mcdn.bilivideo.cn': ['0.0.0.0']
+  };
 
   return config;
 }
