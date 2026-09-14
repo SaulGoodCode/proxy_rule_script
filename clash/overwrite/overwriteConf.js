@@ -69,8 +69,8 @@ function main(config) {
       name: 'Ⓜ️ 微软服务',
       type: 'select',
       proxies: [
-        '🚀 节点选择',
         'DIRECT',
+        '🚀 节点选择',
         '🇺🇲 美国节点',
         '🇭🇰 香港节点',
         '🇨🇳 台湾节点',
@@ -115,7 +115,6 @@ function main(config) {
       type: 'select',
       proxies: [
         '🚀 节点选择',
-        '🎥 奈飞节点',
         '🇸🇬 狮城节点',
         '🇭🇰 香港节点',
         '🇨🇳 台湾节点',
@@ -174,12 +173,6 @@ function main(config) {
       type: 'url-test',
       interval: 300,
       tolerance: 200
-    },
-    {
-      name: '🎥 奈飞节点',
-      'include-all': true,
-      filter: '(?i)NF|奈飞|解锁|Netflix|NETFLIX|Media',
-      type: 'select'
     }
   ];
 
