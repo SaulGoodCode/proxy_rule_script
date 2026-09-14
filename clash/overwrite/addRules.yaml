@@ -1,3 +1,4 @@
 +rules:
   - 'DOMAIN,steamcdn-a.akamaihd.net,DIRECT'
   - 'DOMAIN-SUFFIX,steamserver.net,DIRECT'
+  - 'DOMAIN,www.google.com,🤖 AI服务'
