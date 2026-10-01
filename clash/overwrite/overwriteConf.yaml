@@ -178,6 +178,13 @@ rule-providers:
     interval: 86400
     format: text
     type: http
+  Tencent:
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Tencent/Tencent.list
+    path: ./ruleset/Tencent.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
   Bing:
     url: https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Bing.list
     path: ./ruleset/Bing.list
@@ -326,6 +333,7 @@ rules:
   - "RULE-SET,AIGlobal,🤖 AI服务"
   - "RULE-SET,GoogleCN,DIRECT"
   - "RULE-SET,SteamCN,DIRECT"
+  - "RULE-SET,Tencent,DIRECT"
   - "RULE-SET,Bing,Ⓜ️ 微软服务"
   - "RULE-SET,OneDrive,Ⓜ️ 微软云盘"
   - "RULE-SET,Microsoft,Ⓜ️ 微软服务"
@@ -388,6 +396,7 @@ dns:
     - "rule-set:LocalAreaNetwork"
     - "rule-set:GoogleCN"
     - "rule-set:SteamCN"
+    - "rule-set:Tencent"
     - "rule-set:ChinaDomain"
     - "rule-set:ChinaCompanyIp"
     - "rule-set:ChinaMedia"

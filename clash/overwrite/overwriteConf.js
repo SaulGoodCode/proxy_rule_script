@@ -298,6 +298,14 @@ function main(config) {
       format: 'text',
       type: 'http'
     },
+    Tencent: {
+      url: 'https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Tencent/Tencent.list',
+      path: './ruleset/Tencent.list',
+      behavior: 'classical',
+      interval: 86400,
+      format: 'text',
+      type: 'http'
+    },
     Nintendo: {
       url: 'https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/Nintendo.list',
       path: './ruleset/Nintendo.list',
@@ -397,6 +405,7 @@ function main(config) {
     'RULE-SET,AIGlobal,🤖 AI服务',
     'RULE-SET,GoogleCN,DIRECT',
     'RULE-SET,SteamCN,DIRECT',
+    'RULE-SET,Tencent,DIRECT',
     'RULE-SET,Bing,Ⓜ️ 微软服务',
     'RULE-SET,OneDrive,Ⓜ️ 微软云盘',
     'RULE-SET,Microsoft,Ⓜ️ 微软服务',
@@ -460,6 +469,7 @@ function main(config) {
       'rule-set:LocalAreaNetwork',
       'rule-set:GoogleCN',
       'rule-set:SteamCN',
+      'rule-set:Tencent',
       'rule-set:ChinaDomain',
       'rule-set:ChinaCompanyIp',
       'rule-set:ChinaMedia',
