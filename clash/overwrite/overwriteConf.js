@@ -210,14 +210,6 @@ function main(config) {
       format: 'text',
       type: 'http'
     },
-    GoogleCN: {
-      url: 'https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/GoogleCN.list',
-      path: './ruleset/GoogleCN.list',
-      behavior: 'classical',
-      interval: 86400,
-      format: 'text',
-      type: 'http'
-    },
     Bing: {
       url: 'https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Bing.list',
       path: './ruleset/Bing.list',
@@ -245,14 +237,6 @@ function main(config) {
     Apple: {
       url: 'https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Apple.list',
       path: './ruleset/Apple.list',
-      behavior: 'classical',
-      interval: 86400,
-      format: 'text',
-      type: 'http'
-    },
-    Telegram: {
-      url: 'https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Telegram.list',
-      path: './ruleset/Telegram.list',
       behavior: 'classical',
       interval: 86400,
       format: 'text',
@@ -330,41 +314,25 @@ function main(config) {
       format: 'text',
       type: 'http'
     },
-    Bahamut: {
-      url: 'https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/Bahamut.list',
-      path: './ruleset/Bahamut.list',
-      behavior: 'classical',
-      interval: 86400,
-      format: 'text',
-      type: 'http'
-    },
-    ChinaMedia: {
-      url: 'https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/ChinaMedia.list',
-      path: './ruleset/ChinaMedia.list',
-      behavior: 'classical',
-      interval: 86400,
-      format: 'text',
-      type: 'http'
-    },
-    ProxyMedia: {
-      url: 'https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/ProxyMedia.list',
-      path: './ruleset/ProxyMedia.list',
+    Proxy: {
+      url: 'https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Global/Global.list',
+      path: './ruleset/Proxy.list',
       behavior: 'classical',
       interval: 86400,
       format: 'text',
       type: 'http'
     },
     ChinaDomain: {
-      url: 'https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/ChinaDomain.list',
+      url: 'https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/China/China.list',
       path: './ruleset/ChinaDomain.list',
       behavior: 'classical',
       interval: 86400,
       format: 'text',
       type: 'http'
     },
-    ChinaCompanyIp: {
-      url: 'https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/ChinaCompanyIp.list',
-      path: './ruleset/ChinaCompanyIp.list',
+    ChinaIPs: {
+      url: 'https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/ChinaIPs/ChinaIPs.list',
+      path: './ruleset/ChinaIPs.list',
       behavior: 'classical',
       interval: 86400,
       format: 'text',
@@ -395,14 +363,12 @@ function main(config) {
     'RULE-SET,BanAD,REJECT',
     'RULE-SET,BanProgramAD,REJECT',
     'RULE-SET,AIGlobal,🤖 AI服务',
-    'RULE-SET,GoogleCN,DIRECT',
     'RULE-SET,SteamCN,DIRECT',
     'RULE-SET,Tencent,DIRECT',
     'RULE-SET,Bing,Ⓜ️ 微软服务',
     'RULE-SET,OneDrive,Ⓜ️ 微软云盘',
     'RULE-SET,Microsoft,Ⓜ️ 微软服务',
     'RULE-SET,Apple,🍎 苹果服务',
-    'RULE-SET,Telegram,🚀 节点选择',
     'RULE-SET,Epic,🎮 游戏平台',
     'RULE-SET,Origin,🎮 游戏平台',
     'RULE-SET,Sony,🎮 游戏平台',
@@ -410,12 +376,10 @@ function main(config) {
     'RULE-SET,Nintendo,🎮 游戏平台',
     'RULE-SET,YouTube,🚀 节点选择',
     'RULE-SET,Netflix,🎥 奈飞视频',
-    'RULE-SET,Bahamut,🚀 节点选择',
-    'RULE-SET,ChinaMedia,DIRECT',
+    'RULE-SET,Proxy,🚀 节点选择',
     'RULE-SET,Download,DIRECT',
-    'RULE-SET,ProxyMedia,🚀 节点选择',
     'RULE-SET,ChinaDomain,DIRECT',
-    'RULE-SET,ChinaCompanyIp,DIRECT',
+    'RULE-SET,ChinaIPs,DIRECT',
     'GEOIP,CN,DIRECT',
     'MATCH,🐟 漏网之鱼'
   ];
@@ -458,12 +422,9 @@ function main(config) {
     'fake-ip-filter': [
       '+.cn',
       'rule-set:LocalAreaNetwork',
-      'rule-set:GoogleCN',
       'rule-set:SteamCN',
       'rule-set:Tencent',
       'rule-set:ChinaDomain',
-      'rule-set:ChinaCompanyIp',
-      'rule-set:ChinaMedia',
       'rule-set:Download',
       '+.lan',
       '+.local',
