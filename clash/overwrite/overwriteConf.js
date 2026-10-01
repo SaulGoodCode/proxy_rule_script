@@ -354,14 +354,6 @@ function main(config) {
       format: 'text',
       type: 'http'
     },
-    ProxyGFWlist: {
-      url: 'https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/ProxyGFWlist.list',
-      path: './ruleset/ProxyGFWlist.list',
-      behavior: 'classical',
-      interval: 86400,
-      format: 'text',
-      type: 'http'
-    },
     ChinaDomain: {
       url: 'https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/ChinaDomain.list',
       path: './ruleset/ChinaDomain.list',
@@ -422,7 +414,6 @@ function main(config) {
     'RULE-SET,ChinaMedia,DIRECT',
     'RULE-SET,Download,DIRECT',
     'RULE-SET,ProxyMedia,🚀 节点选择',
-    'RULE-SET,ProxyGFWlist,🚀 节点选择',
     'RULE-SET,ChinaDomain,DIRECT',
     'RULE-SET,ChinaCompanyIp,DIRECT',
     'GEOIP,CN,DIRECT',
