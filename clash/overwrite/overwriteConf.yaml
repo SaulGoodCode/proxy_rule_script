@@ -290,13 +290,23 @@ rule-providers:
     interval: 86400
     format: yaml
     type: http
+  Google:
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Google/Google.list
+    path: ./ruleset/Google.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
 rules:
   - "RULE-SET,LocalAreaNetwork,DIRECT"
   - "RULE-SET,UnBan,DIRECT"
   - "RULE-SET,BanAD,REJECT"
   - "RULE-SET,BanProgramAD,REJECT"
   - "RULE-SET,AIGlobal,🤖 AI服务"
+  - "RULE-SET,Google,🤖 AI服务"
   - "RULE-SET,SteamCN,DIRECT"
+  - "DOMAIN,steamcdn-a.akamaihd.net,DIRECT"
+  - "DOMAIN-SUFFIX,steamserver.net,DIRECT"
   - "RULE-SET,Tencent,DIRECT"
   - "RULE-SET,Bing,Ⓜ️ 微软服务"
   - "RULE-SET,OneDrive,Ⓜ️ 微软云盘"
