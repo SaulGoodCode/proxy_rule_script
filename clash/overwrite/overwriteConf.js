@@ -381,6 +381,7 @@ function main(config) {
     'RULE-SET,Proxy,🚀 节点选择',
     'RULE-SET,Download,DIRECT',
     'RULE-SET,ChinaDomain,DIRECT',
+    'GEOSITE,cn,DIRECT',
     'RULE-SET,ChinaIPs,DIRECT,no-resolve',
     'GEOIP,CN,DIRECT,no-resolve',
     'MATCH,🐟 漏网之鱼'
@@ -423,6 +424,7 @@ function main(config) {
     'fake-ip-filter-mode': 'blacklist',
     'fake-ip-filter': [
       '+.cn',
+      'geosite:cn',
       'rule-set:LocalAreaNetwork',
       'rule-set:SteamCN',
       'rule-set:Tencent',
@@ -441,6 +443,12 @@ function main(config) {
     ],
     'default-nameserver': ['223.5.5.5', '119.29.29.29'],
     nameserver: ['https://1.1.1.1/dns-query#🚀 节点选择'],
+    'nameserver-policy': {
+      'geosite:cn,private': [
+        'https://dns.alidns.com/dns-query#DIRECT',
+        'https://doh.pub/dns-query#DIRECT'
+      ]
+    },
     'proxy-server-nameserver': [
       'https://doh.pub/dns-query#DIRECT',
       'https://dns.alidns.com/dns-query#DIRECT'
