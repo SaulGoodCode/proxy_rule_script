@@ -290,14 +290,6 @@ function main(config) {
       format: 'text',
       type: 'http'
     },
-    Nintendo: {
-      url: 'https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/Nintendo.list',
-      path: './ruleset/Nintendo.list',
-      behavior: 'classical',
-      interval: 86400,
-      format: 'text',
-      type: 'http'
-    },
     YouTube: {
       url: 'https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/YouTube.list',
       path: './ruleset/YouTube.list',
@@ -323,7 +315,7 @@ function main(config) {
       type: 'http'
     },
     ChinaDomain: {
-      url: 'https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/China/China.list',
+      url: 'https://raw.githubusercontent.com/LM-Firefly/Rules/refs/heads/master/Domestic.list',
       path: './ruleset/ChinaDomain.list',
       behavior: 'classical',
       interval: 86400,
@@ -384,14 +376,13 @@ function main(config) {
     'RULE-SET,Origin,🎮 游戏平台',
     'RULE-SET,Sony,🎮 游戏平台',
     'RULE-SET,Steam,🎮 游戏平台',
-    'RULE-SET,Nintendo,🎮 游戏平台',
     'RULE-SET,YouTube,🚀 节点选择',
     'RULE-SET,Netflix,🎥 奈飞视频',
     'RULE-SET,Proxy,🚀 节点选择',
     'RULE-SET,Download,DIRECT',
     'RULE-SET,ChinaDomain,DIRECT',
-    'RULE-SET,ChinaIPs,DIRECT',
-    'GEOIP,CN,DIRECT',
+    'RULE-SET,ChinaIPs,DIRECT,no-resolve',
+    'GEOIP,CN,DIRECT,no-resolve',
     'MATCH,🐟 漏网之鱼'
   ];
 
